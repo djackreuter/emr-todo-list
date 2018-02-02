@@ -1,0 +1,8 @@
+.row
+  .col-lg-6
+    .tasks-card.card
+      %p
+        = @list.name
+        = render partial: 'tasks/task', collection: @list.tasks
+
+= link_to "Back", lists_path
