@@ -1,0 +1,9 @@
+.row
+  .col-lg-12
+    %h1
+      All Lists
+.row
+  .col-lg-10
+    - @lists.each do |list|
+      .card
+        = link_to list.title, list_url(list)
