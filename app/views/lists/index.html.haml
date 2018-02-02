@@ -4,6 +4,8 @@
       All Lists
 .row
   .col-lg-10
+    %a{ href: "/lists/new", class: "btn btn-primary"}
+      New List
     - @lists.each do |list|
       .card
         = link_to list.title, list_url(list)
