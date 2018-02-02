@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :list_params
+  # before_action :list_params
   def index
     @lists = List.all
   end
@@ -9,13 +9,13 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = lists.build
+    @list = List.new
   end
 
   def create
-    @list = lists.build(list_params)
+    list = List.new(list_params)
 
-    if @list.save
+    if list.save
       redirect_to root_path
     else
       render 'new'
