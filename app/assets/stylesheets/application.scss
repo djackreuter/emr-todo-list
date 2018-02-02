@@ -15,9 +15,21 @@
  */
  @import "bootstrap";
 
- .card {
+ .index-card {
   padding: 1rem;
   margin-top: 1rem;
   background: lightsteelblue;
   width: 50%
+ }
+
+ .tasks-card {
+  padding: 1rem;
+  margin-top: 1rem;
+  background: lightsteelblue;
+ }
+
+ .del-task:hover {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
  }
