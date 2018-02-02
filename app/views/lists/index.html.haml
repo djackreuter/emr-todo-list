@@ -6,6 +6,10 @@
   .col-lg-6
     %a{ href: "/lists/new", class: "btn btn-primary"}
       New List
-    - @lists.each do |list|
-      .card
+- @lists.each do |list|
+  .card
+    .row
+      .col-lg-9
         = link_to list.name, list_url(list)
+      .col-lg-3
+        = link_to "Delete", lists_path(list.id), method: :delete, data: { confirm: "Are you sure???" }, class: "btn btn-danger float-right"
