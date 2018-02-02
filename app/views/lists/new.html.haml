@@ -6,6 +6,11 @@
   .col-lg-8
     = form_for @list do |f|
       = render 'form', f: f
+
+      .form-group
+        = f.fields_for :tasks, Task.new do |ff|
+          = render 'tasks/form', f: ff
+
       .form-group
         = f.submit "Create", class: "btn btn-success"
         - if @list.errors.any?
