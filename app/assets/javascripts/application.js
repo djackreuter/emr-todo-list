@@ -19,7 +19,7 @@
 $(document).on('turbolinks:load', function() {
   $('form').on('click', '.remove_record', function(e) {
     $(this).prev('input[type=hidden]').val('1');
-    $(this).closest('p').hide();
+    $(this).closest('p').remove();
     return e.preventDefault();
   });
   $('form').on('click', '.add_fields', function(e) {
