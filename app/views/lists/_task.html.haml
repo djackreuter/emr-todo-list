@@ -1,6 +1,6 @@
 %p
   = f.label :task
-  = f.check_box :_destroy, as: :hidden
+  = f.check_box :_destroy, as: :hidden, class: "del-checkbox"
   = link_to 'X', '#', class: "float-right del-task remove_record"
   = f.text_field :task, class: "form-control"
 
