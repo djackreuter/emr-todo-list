@@ -10,6 +10,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @list.tasks.build
   end
 
   def create
@@ -31,6 +32,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, tasks_attributes: [:task])
+    params.require(:list).permit(:name, tasks_attributes: [:task, :_destroy])
   end
 end
