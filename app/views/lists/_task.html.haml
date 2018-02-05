@@ -1,9 +1,6 @@
--# %br
--# = " - #{task.task}"
-= f.label :task
-%br
-= f.text_field :task, class: "form-control"
-= f.hidden_field :_destroy
-= link_to 'X', '#', class: "float-right del-task"
+%p
+  = f.label :task
+  = f.check_box :_destroy, as: :hidden
+  = link_to 'X', '#', class: "float-right del-task remove_record"
+  = f.text_field :task, class: "form-control"
 
--# = link_to 'X', [task.list, task], method: :delete, data: { confirm: 'Are you sure???'}, class: "float-right del-task"
