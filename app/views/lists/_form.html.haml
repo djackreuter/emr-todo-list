@@ -1,4 +1,18 @@
-.form-group
-  = f.label :name
-  %br
-  = f.text_field :name, class: "form-control"
+= form_for @list do |f|
+  .form-group
+    = f.label :name
+    %br
+    = f.text_field :name, class: "form-control"
+
+  .form-group.fields
+    = f.fields_for :tasks do |ff|
+      = render 'task', f: ff
+
+  .form-group
+    = f.submit "Create", class: "btn btn-success"
+    = link_to_add_new_task('Add Task', f, :tasks, class: "btn btn-primary")
+    - if @list.errors.any?
+      - @list.errors.full_messages.each do |msg|
+        .alert.alert-danger
+          = msg
+= link_to "Back", lists_path
