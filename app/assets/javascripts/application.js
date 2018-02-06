@@ -18,7 +18,7 @@
 //= require bootstrap-sprockets
 $(document).on('turbolinks:load', function() {
   $('form').on('click', '.remove_record', function(e) {
-    $(this).prev('input[type=checkbox]').val('1');
+    $(this).prev('input[type=checkbox]').prop('checked', true);
     $(this).closest('p').hide();
     return e.preventDefault();
   });
