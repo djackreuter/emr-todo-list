@@ -18,8 +18,8 @@
 //= require bootstrap-sprockets
 $(document).on('turbolinks:load', function() {
   $('form').on('click', '.remove_record', function(e) {
-    $(this).prev('input[type=hidden]').val('1');
-    $(this).closest('p').remove();
+    $(this).prev('input[type=checkbox]').val('1');
+    $(this).closest('p').hide();
     return e.preventDefault();
   });
   $('form').on('click', '.add_fields', function(e) {
