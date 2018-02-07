@@ -1,8 +1,9 @@
 %h1
   All Users
-.row
-  .col-lg-8
-    - @users.each do |user|
-      = link_to "#{user.name}", user_path(user)
+- @users.each do |user|
+  .card.index-card
+    .row
+      .col-lg-8
+        = link_to "#{user.name}", user_path(user)
 
 = link_to "Back", root_path
