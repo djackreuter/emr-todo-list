@@ -12,7 +12,7 @@
     = f.text_area :bio, class: "form-control"
 
   .form-group
-    = f.submit "Submit", class: "btn btn-success"
+    = f.submit "Next", class: "btn btn-success"
     - if @user.errors.any?
       - @user.errors.full_messages.each do |msg|
         .alert.alert-danger
