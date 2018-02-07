@@ -7,6 +7,7 @@
     %a{ href: "/lists/new", class: "btn btn-primary"}
       New List
     = link_to "New User", new_user_path, class: "btn btn-success"
+    = link_to "View Users", users_path, class: "btn btn-dark"
 - @lists.each do |list|
   .card.index-card
     .row
