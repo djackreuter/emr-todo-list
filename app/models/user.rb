@@ -25,4 +25,20 @@ class User < ApplicationRecord
   def sec3_present?
     !university.nil? || !degree.nil? || !grad_year.nil?
   end
+
+  def complete?
+    grad_year.present?
+  end
+
+  def partial
+    if name.blank? && email.blank? && bio.blank?
+      'form1'
+    elsif city.blank? && state.blank? && zip.blank?
+      'form2'
+    elsif university.blank? && degree.blank? && grad_year.blank?
+      'form3'
+    else
+      'form1'
+    end
+  end
 end
