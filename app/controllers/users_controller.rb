@@ -31,8 +31,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     set_partial
-    if @user.update_attributes(user_params)
+    if @user.update_attributes(user_params) && helpers.form3_empty?(@user)
       redirect_to edit_user_path(@user)
+    elsif @user.update_attributes(user_params)
+      redirect_to user_path(@user)
     else
       render 'new'
     end
