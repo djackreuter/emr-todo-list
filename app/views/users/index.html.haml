@@ -1,5 +1,6 @@
 %h1
   All Users
+= link_to "New User", new_user_path, class: "btn btn-success"
 - @users.each do |user|
   .card.index-card
     .row
