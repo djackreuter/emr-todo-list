@@ -23,6 +23,6 @@ class User < ApplicationRecord
   end
 
   def sec3_present?
-    city.present? && state.present? && zip.present?
+    !university.nil? || !degree.nil? || !grad_year.nil?
   end
 end
