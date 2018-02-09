@@ -30,4 +30,20 @@ $(document).on('turbolinks:load', function() {
     $('.fields').append($(this).data('fields').replace(regexp, time));
     return e.preventDefault();
   });
+  $('#album-info').click(function() {
+    $.ajax({
+      url: 'https://jsonplaceholder.typicode.com/albums',
+      datatype: 'json',
+      success: function(result) {
+        $.each(result, function(index, album) {
+          $('#album').append(`<p>
+            <strong>Id:</strong> ${album.id}
+            </p>
+            <p>
+            <strong>Title:</strong> ${album.title}
+          </p>`);
+        });
+      }
+    });
+  });
 });
