@@ -14,6 +14,8 @@ gem 'sqlite3'
 gem 'haml-rails', '~> 0.9.0'
 # Bootstrap 4
 gem 'bootstrap', '~> 4.0.0'
+# Active Model Serializers
+gem 'active_model_serializers', '~> 0.10.0'
 # jQuery
 gem 'jquery-rails'
 # Use Puma as the app server
