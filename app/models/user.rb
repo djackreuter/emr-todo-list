@@ -31,14 +31,20 @@ class User < ApplicationRecord
   end
 
   def partial
-    if name.blank? && email.blank? && bio.blank?
-      'form1'
-    elsif city.blank? && state.blank? && zip.blank?
-      'form2'
-    elsif university.blank? && degree.blank? && grad_year.blank?
-      'form3'
-    else
-      'form1'
-    end
+    return 'form1' if is_form_1?
+    return 'form2' if is_form_2?
+    return 'form3' if is_form_3?
+  end
+
+  def form_1?
+    name.blank? && email.blank? && bio.blank?
+  end
+
+  def form_2?
+    city.blank? && state.blank? && zip.blank?
+  end
+
+  def form_3?
+    university.blank? && degree.blank? && grad_year.blank?
   end
 end
