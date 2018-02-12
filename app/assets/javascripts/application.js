@@ -35,14 +35,13 @@ $(document).on('turbolinks:load', function() {
       url: 'https://jsonplaceholder.typicode.com/albums',
       datatype: 'json',
       success: function(result) {
-        $.each(result, function(index, album) {
-          $('#album').append(`<p>
-            <strong>Id:</strong> ${album.id}
-            </p>
-            <p>
-            <strong>Title:</strong> ${album.title}
-          </p>`);
-        });
+        var source = $('#entry-template').html();
+        var template = Handlebars.compile(source);
+        var album = {album: result}
+        $('#album').html(template(album));
+        // $.each(result, function(index, album) {
+        //   $('#album').append(template(album));
+        // });
       }
     });
   });
