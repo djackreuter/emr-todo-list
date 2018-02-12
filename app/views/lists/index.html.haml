@@ -3,12 +3,13 @@
     %h1
       All Lists
 .row
-  .col-lg-6
+  .col-lg-8
     %a{ href: "/lists/new", class: "btn btn-primary"}
       New List
     = link_to "New User", new_user_path, class: "btn btn-success"
     = link_to "View Users", users_path, class: "btn btn-dark"
     = link_to "API Request", albums_path, class: "btn btn-warning"
+    = link_to "Upload Form", documents_path, class: "btn btn-info"
 - @lists.each do |list|
   .card.index-card
     .row

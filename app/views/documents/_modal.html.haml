@@ -1,0 +1,26 @@
+.modal.fade#exampleModal{tabindex: "-1", role: "dialog", "aria-labelledby": "exampleModalLabel", "aria-hidden": "true"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %h5.modal-title#exampleModalLabel
+          File Upload
+        %button.close{type: "button", "data-dismiss": "modal", "aria-label": "Close"}
+          %span{"aria-hidden": "true"}
+            &times;
+      .modal-body
+        = form_for Document.new do |f|
+          .form-group
+            = f.label :name
+            %br
+            = f.text_field(:name, {:class => "form-control"})
+          .form-group
+            = f.file_field(:post_image)
+          .form-group
+            = f.submit "Upload", ({:class => "btn btn-success"})
+        
+      .modal-footer
+        %button.btn.btn-secondary{type: "button", "data-dismiss": "modal"}
+          Close
+        %button.btn.btn-primary{type: "button"}
+          Save changes
+
