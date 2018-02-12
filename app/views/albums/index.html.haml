@@ -8,3 +8,17 @@
 .row
   .col-lg-8
     #album
+
+%script#entry-template{type: "text/x-handlebars-template"}
+  {{#each album}}
+  %p
+    %strong
+      Id: 
+    {{id}}
+  %p
+    %strong
+      Title: 
+    {{title}}
+  {{/each}}
+
+
