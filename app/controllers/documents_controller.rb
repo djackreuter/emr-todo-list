@@ -5,6 +5,10 @@ class DocumentsController < ApplicationController
 
   def show
     @doc = Document.find(params[:id])
+  end
+
+  def download_pdf
+    @doc = Document.find(params[:id])
     send_file @doc.doc_file.path
   end
 

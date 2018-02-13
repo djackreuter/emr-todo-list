@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :albums, only: [:index]
-  resources :documents
+  resources :documents do
+    member do
+      get 'download_pdf'
+    end
+  end
 end
