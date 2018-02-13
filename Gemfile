@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Responders
+gem 'responders', '~> 2.4'
+# Remotipart
+gem 'remotipart', '~> 1.2', '>= 1.2.1'
 # Paperclip
 gem 'paperclip', '~> 5.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
