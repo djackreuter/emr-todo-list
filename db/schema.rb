@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213170456) do
+ActiveRecord::Schema.define(version: 20180213180703) do
 
   create_table "documents", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20180213170456) do
     t.string "doc_image_content_type"
     t.integer "doc_image_file_size"
     t.datetime "doc_image_updated_at"
+    t.string "doc_file_file_name"
+    t.string "doc_file_content_type"
+    t.integer "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
   end
 
   create_table "lists", force: :cascade do |t|

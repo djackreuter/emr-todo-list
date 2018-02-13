@@ -5,6 +5,7 @@ class DocumentsController < ApplicationController
 
   def show
     @doc = Document.find(params[:id])
+    send_file @doc.doc_file.path
   end
 
   def new
@@ -13,11 +14,10 @@ class DocumentsController < ApplicationController
 
   def create
     @doc = Document.new(doc_params)
-
     if @doc.save
       redirect_to document_path(@doc)
     else
-      render 'index'
+      render 'new'
     end
   end
 
@@ -30,6 +30,6 @@ class DocumentsController < ApplicationController
   private
 
   def doc_params
-    params.require(:document).permit(:name, :doc_image)
+    params.require(:document).permit(:name, :doc_file)
   end
 end
