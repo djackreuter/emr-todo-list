@@ -36,6 +36,8 @@ Rails.application.configure do
 
   ActiveModelSerializers.config.adapter = :json_api
 
+  Paperclip.options[:command_path] = '/usr/local/bin/'
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
