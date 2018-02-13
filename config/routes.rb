@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :albums, only: [:index]
-  resources :documents, only: [:index, :show, :create, :destroy]
+  resources :documents
 end

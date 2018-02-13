@@ -14,13 +14,12 @@
             %br
             = f.text_field(:name, {:class => "form-control"})
           .form-group
-            = f.file_field(:post_image)
+            = f.file_field(:doc_image)
           .form-group
             = f.submit "Upload", ({:class => "btn btn-success"})
         
       .modal-footer
         %button.btn.btn-secondary{type: "button", "data-dismiss": "modal"}
           Close
-        %button.btn.btn-primary{type: "button"}
-          Save changes
+      
 

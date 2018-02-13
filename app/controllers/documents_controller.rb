@@ -7,6 +7,10 @@ class DocumentsController < ApplicationController
     @doc = Document.find(params[:id])
   end
 
+  def new
+    @doc = Document.new
+  end
+
   def create
     @doc = Document.new(doc_params)
 
