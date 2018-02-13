@@ -1,0 +1,10 @@
+%h1
+  All Docs
+%hr
+- @docs.each do |doc|
+  .card.index-card
+    .row
+      .col-lg-9
+        = link_to doc.name, document_url(doc)
+      .col-lg-3
+        = link_to "Delete", document_path(doc.id), method: :delete, data: { confirm: "Are you sure???" }, class: "btn btn-danger float-right"

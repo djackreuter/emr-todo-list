@@ -8,13 +8,13 @@
           %span{"aria-hidden": "true"}
             &times;
       .modal-body
-        = form_for Document.new do |f|
+        = form_for @doc do |f|
           .form-group
             = f.label :name
             %br
             = f.text_field(:name, {:class => "form-control"})
           .form-group
-            = f.file_field(:doc_image)
+            = f.file_field(:doc_file)
           .form-group
             = f.submit "Upload", ({:class => "btn btn-success"})
         
