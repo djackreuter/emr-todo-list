@@ -1,6 +1,10 @@
 %h1
   All Docs
 %hr
+%button.btn.btn-primary{type: "button", "data-toggle": "modal", "data-target": "#docModal"}
+  New Document
+
+= render 'modal'
 - @docs.each do |doc|
   .card.index-card
     .row

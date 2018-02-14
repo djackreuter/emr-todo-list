@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  respond_to :js
+
   def index
     @docs = Document.all
   end
@@ -12,16 +14,19 @@ class DocumentsController < ApplicationController
     send_file @doc.doc_file.path
   end
 
-  def new
-    @doc = Document.new
-  end
+  # def new
+  #   @doc = Document.new
+  # end
 
   def create
     @doc = Document.new(doc_params)
-    if @doc.save
-      redirect_to document_path(@doc)
-    else
-      render 'new'
+    respond_with do |format|
+      if @doc.save
+        format.js
+        # redirect_to document_path(@doc)
+      else
+        render 'new'
+      end
     end
   end
 
