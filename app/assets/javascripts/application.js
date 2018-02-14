@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery3
+//= require jquery.remotipart
 //= require popper
 //= require bootstrap-sprockets
 $(document).on('turbolinks:load', function() {
@@ -45,4 +46,10 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
+
+  $('#upload-form').bind('ajax:success', function() {
+    if ( $(this).data('remotipartSubmitted') )
+  });
+
+
 });
