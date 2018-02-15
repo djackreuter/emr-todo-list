@@ -8,7 +8,7 @@
           %span{"aria-hidden": "true"}
             &times;
       .modal-body
-        = form_for Document.new, html: { id: "upload-form" }, remote: true do |f|
+        = form_for Document.new, html: { multipart: true, id: "upload-form" }, remote: true do |f|
           .form-group
             = f.label :name
             %br
@@ -16,7 +16,7 @@
           .form-group
             = f.file_field(:doc_file)
           .form-group
-            = f.submit "Upload", class: "btn btn-success"
+            = f.submit "Upload", class: "btn btn-success", id: "doc-modal-submit"
         
       .modal-footer
         %button.btn.btn-secondary{type: "button", "data-dismiss": "modal"}
