@@ -44,7 +44,6 @@ $(document).on('turbolinks:load', function() {
     });
   });
   $('#doc-modal-submit').click(function() {
-    preventDefault();
     $('#docModal').modal('hide');
   });
 });
