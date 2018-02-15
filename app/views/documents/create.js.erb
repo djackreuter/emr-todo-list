@@ -1,2 +1,4 @@
 alert('Document uploaded successfully!');
-window.location.reload(true);
+$('#downloads').append("<%= j(render partial: 'document', locals: {document: @doc }) %>");
+
+
