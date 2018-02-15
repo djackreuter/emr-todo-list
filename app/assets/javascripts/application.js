@@ -46,10 +46,11 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
-
-  $('#upload-form').bind('ajax:success', function() {
-    if ( $(this).data('remotipartSubmitted') )
-  });
-
+  $('#doc-modal-submit').click(function() {
+    // e.preventDefault();
+    $('#docModal').modal('hide');
+    // window.location.reload(true);
+    // return false;
+  })
 
 });
