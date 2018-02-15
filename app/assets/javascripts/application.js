@@ -40,17 +40,11 @@ $(document).on('turbolinks:load', function() {
         var template = Handlebars.compile(source);
         var album = {album: result}
         $('#album').html(template(album));
-        // $.each(result, function(index, album) {
-        //   $('#album').append(template(album));
-        // });
       }
     });
   });
   $('#doc-modal-submit').click(function() {
-    // e.preventDefault();
+    preventDefault();
     $('#docModal').modal('hide');
-    // window.location.reload(true);
-    // return false;
-  })
-
+  });
 });
