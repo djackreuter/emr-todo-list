@@ -23,3 +23,5 @@
 .byebug_history
 .DS_Store
 public/
+._.DS_Store
+._handlebars-v4.0.11.js
