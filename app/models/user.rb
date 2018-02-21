@@ -31,9 +31,9 @@ class User < ApplicationRecord
   end
 
   def partial
-    return 'form1' if is_form_1?
-    return 'form2' if is_form_2?
-    return 'form3' if is_form_3?
+    return 'form1' if form_1?
+    return 'form2' if form_2?
+    return 'form3' if form_3?
   end
 
   def form_1?
